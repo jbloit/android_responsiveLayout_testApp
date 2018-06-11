@@ -1,0 +1,123 @@
+<!--<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:background="#0099cc"-->
+    <!--tools:context="com.jbloit.reactivelayouttestapp.FullscreenActivity">-->
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#0099cc"
+        >
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline_horizontal_center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <ImageView
+            android:id="@+id/img1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:adjustViewBounds="false"
+            android:cropToPadding="false"
+            android:scaleType="fitCenter"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@+id/guideline_margin1"
+            app:layout_constraintDimensionRatio="1.5:1"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_horizontal_center"
+            app:layout_constraintHorizontal_bias="0.9"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5"
+            app:srcCompat="@mipmap/icone_menu_acoustique" />
+
+        <ImageView
+            android:id="@+id/img2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:adjustViewBounds="false"
+            android:cropToPadding="false"
+            android:scaleType="fitCenter"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@+id/guideline_margin1"
+            app:layout_constraintDimensionRatio="1.5:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintStart_toStartOf="@+id/guideline_horizontal_center"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@mipmap/icone_menu_acoustique" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline_margin1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5"
+            android:visibility="visible"/>
+
+        <ImageView
+            android:id="@+id/img3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:adjustViewBounds="false"
+            android:cropToPadding="false"
+            android:scaleType="fitCenter"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@+id/guideline_margin2"
+            app:layout_constraintDimensionRatio="1.5:1"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_horizontal_center"
+            app:layout_constraintHorizontal_bias="0.31"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/guideline_margin1"
+            app:layout_constraintVertical_bias="0.2"
+            app:srcCompat="@mipmap/icone_menu_acoustique" />
+
+        <ImageView
+            android:id="@+id/img4"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:adjustViewBounds="false"
+            android:cropToPadding="false"
+            android:scaleType="fitCenter"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@+id/guideline_margin2"
+            app:layout_constraintDimensionRatio="1.5:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.8"
+            app:layout_constraintStart_toStartOf="@+id/guideline_horizontal_center"
+            app:layout_constraintTop_toBottomOf="@+id/guideline_margin1"
+            app:srcCompat="@mipmap/icone_menu_acoustique" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline_margin2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="1"
+            android:visibility="visible"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+<!--</FrameLayout>-->
