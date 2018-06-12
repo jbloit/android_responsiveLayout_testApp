@@ -20,8 +20,8 @@
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.5" />
 
-        <ImageView
-            android:id="@+id/img1"
+        <SurfaceView
+            android:id="@+id/surface1"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginBottom="8dp"
@@ -40,10 +40,31 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.5"
             app:layout_constraintWidth_default="wrap"
-            app:srcCompat="@mipmap/icone_menu_acoustique" />
+            />
 
-        <ImageView
-            android:id="@+id/img2"
+        <!--<ImageView-->
+            <!--android:id="@+id/img2"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="0dp"-->
+            <!--android:layout_marginBottom="8dp"-->
+            <!--android:layout_marginEnd="8dp"-->
+            <!--android:layout_marginStart="8dp"-->
+            <!--android:layout_marginTop="8dp"-->
+            <!--android:adjustViewBounds="false"-->
+            <!--android:cropToPadding="false"-->
+            <!--android:scaleType="fitCenter"-->
+            <!--android:visibility="visible"-->
+            <!--app:layout_constraintBottom_toTopOf="@+id/guideline_margin1"-->
+            <!--app:layout_constraintDimensionRatio="1.5:1"-->
+            <!--app:layout_constraintEnd_toEndOf="parent"-->
+            <!--app:layout_constraintHorizontal_bias="0.1"-->
+            <!--app:layout_constraintStart_toStartOf="@+id/guideline_horizontal_center"-->
+            <!--app:layout_constraintTop_toTopOf="parent"-->
+            <!--app:layout_constraintWidth_default="wrap"-->
+            <!--app:srcCompat="@mipmap/icone_menu_acoustique" />-->
+
+        <SurfaceView
+            android:id="@+id/surface2"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginBottom="8dp"
@@ -60,8 +81,7 @@
             app:layout_constraintHorizontal_bias="0.1"
             app:layout_constraintStart_toStartOf="@+id/guideline_horizontal_center"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintWidth_default="wrap"
-            app:srcCompat="@mipmap/icone_menu_acoustique" />
+            app:layout_constraintWidth_default="wrap"/>
 
         <android.support.constraint.Guideline
             android:id="@+id/guideline_margin1"
@@ -71,8 +91,8 @@
             app:layout_constraintGuide_percent="0.5"
             android:visibility="visible"/>
 
-        <ImageView
-            android:id="@+id/img3"
+        <SurfaceView
+            android:id="@+id/surface3"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginBottom="8dp"
@@ -90,10 +110,10 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/guideline_margin1"
             app:layout_constraintWidth_default="wrap"
-            app:srcCompat="@mipmap/icone_menu_acoustique" />
+            />
 
-        <ImageView
-            android:id="@+id/img4"
+        <SurfaceView
+            android:id="@+id/surface4"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginBottom="8dp"
@@ -111,7 +131,7 @@
             app:layout_constraintStart_toStartOf="@+id/guideline_horizontal_center"
             app:layout_constraintTop_toBottomOf="@+id/guideline_margin1"
             app:layout_constraintWidth_default="wrap"
-            app:srcCompat="@mipmap/icone_menu_acoustique" />
+            />
 
         <android.support.constraint.Guideline
             android:id="@+id/guideline_margin2"
