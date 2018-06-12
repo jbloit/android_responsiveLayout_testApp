@@ -6,11 +6,10 @@ import android.net.Uri
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.support.constraint.ConstraintLayout
+import android.support.constraint.ConstraintSet
 import android.util.Log
-import android.view.Surface
-import android.view.SurfaceHolder
-import android.view.SurfaceView
-import android.view.View
+import android.view.*
 import android.widget.ImageView
 import android.widget.SeekBar
 import kotlinx.android.synthetic.main.activity_fullscreen.*
@@ -34,6 +33,20 @@ class FullscreenActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener 
 
         setContentView(R.layout.activity_fullscreen)
         seekBar_imageCount.setOnSeekBarChangeListener(this)
+
+        val rootLayout = findViewById<ConstraintLayout>(R.id.responsiveRootLayout)
+
+
+
+        // see https://stackoverflow.com/questions/40275152/how-to-programmatically-add-views-and-constraints-to-a-constraintlayout?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
+        // and
+        // https://developer.android.com/reference/android/support/constraint/ConstraintSet
+        var set = ConstraintSet()
+        val sfv1 = SurfaceView(this)
+        rootLayout.addView(sfv1)
+        set.clone(rootLayout)
+        set.connect(sfv1.id, ConstraintSet.TOP, rootLayout.id, ConstraintSet.TOP, 8)
+
         videoViews.add(surface1)
         videoViews.add(surface2)
         videoViews.add(surface3)
