@@ -18,7 +18,7 @@ class FullscreenActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener 
     val TAG = "FULLSCREEN"
 
     private var viewsCount = 8
-    private var imageViews: ArrayList<ImageView> = ArrayList(viewsCount)
+    private var compoundViews: ArrayList<CompoundView> = ArrayList(viewsCount)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,10 +26,10 @@ class FullscreenActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener 
         setContentView(R.layout.activity_fullscreen)
         seekBar_imageCount.setOnSeekBarChangeListener(this)
 
-        imageViews.add(img1)
-        imageViews.add(img2)
-        imageViews.add(img3)
-        imageViews.add(img4)
+        compoundViews.add(img1)
+        compoundViews.add(img2)
+        compoundViews.add(img3)
+        compoundViews.add(img4)
 
 
     }
@@ -42,11 +42,11 @@ class FullscreenActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener 
         }
 
         for (i in 0..3){
-            imageViews[i].visibility = ImageView.GONE
+            compoundViews[i].visibility = ImageView.GONE
         }
         for (i in 1..progress){
             Log.d(TAG, "progress : $i")
-            imageViews[i-1]?.visibility = ImageView.VISIBLE
+            compoundViews[i-1]?.visibility = ImageView.VISIBLE
         }
     }
 
