@@ -24,3 +24,8 @@ as explained [here](https://developer.android.com/training/constraint-layout/#ad
 Change the margin position based on the visibility of the different views.
 
 ![alt-text](screenCast_Nviews.gif)
+
+## On CompoundView branch
+Let each component be a compound view instead of a single image view. Dynamically set the text in the compound view.
+
+![alt-text](screenCast_compuoundViews.gif)
