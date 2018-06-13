@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.SeekBar
 import kotlinx.android.synthetic.main.activity_fullscreen.*
+import kotlinx.android.synthetic.main.layout_compound.view.*
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -32,6 +33,7 @@ class FullscreenActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener 
         compoundViews.add(img4)
 
 
+
     }
 
     override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
@@ -47,6 +49,7 @@ class FullscreenActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener 
         for (i in 1..progress){
             Log.d(TAG, "progress : $i")
             compoundViews[i-1]?.visibility = ImageView.VISIBLE
+            compoundViews[i-1].textView.text = "$progress SELECTED"
         }
     }
 
