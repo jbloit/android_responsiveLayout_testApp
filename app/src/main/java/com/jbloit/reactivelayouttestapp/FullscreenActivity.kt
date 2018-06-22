@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.util.Log
 import android.view.View
+import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.SeekBar
 import kotlinx.android.synthetic.main.activity_fullscreen.*
@@ -25,32 +26,20 @@ class FullscreenActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener 
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_fullscreen)
-        seekBar_imageCount.setOnSeekBarChangeListener(this)
-
-        compoundViews.add(img1)
-        compoundViews.add(img2)
-        compoundViews.add(img3)
-        compoundViews.add(img4)
-
-
 
     }
 
-    override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-        if (progress < 3){
-            guideline_margin1.setGuidelinePercent(1.toFloat())
-        } else {
-            guideline_margin1.setGuidelinePercent(0.5.toFloat())
-        }
+    override fun onAttachedToWindow() {
+        super.onAttachedToWindow()
+        val v = findViewById<CompoundView>(R.id.compound1)
+        v?.x = 500.toFloat()
+        v?.y = 500.toFloat()
+//        v?.layoutParams = ViewGroup.LayoutParams(500, 500)
+        v?.layoutParams?.width = 100
+    }
 
-        for (i in 0..3){
-            compoundViews[i].visibility = ImageView.GONE
-        }
-        for (i in 1..progress){
-            Log.d(TAG, "progress : $i")
-            compoundViews[i-1]?.visibility = ImageView.VISIBLE
-            compoundViews[i-1].textView.text = "$progress SELECTED"
-        }
+    override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+
     }
 
     override fun onStartTrackingTouch(seekBar: SeekBar?) {
