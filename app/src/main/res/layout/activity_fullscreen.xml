@@ -9,8 +9,80 @@
     <view
         android:id="@+id/compound1"
         class="com.jbloit.reactivelayouttestapp.CompoundView"
-        id="@+id/view"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="150dp"/>
+
+    <view
+        android:id="@+id/compound2"
+        class="com.jbloit.reactivelayouttestapp.CompoundView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="150dp"
+        />
+
+    <view
+        android:id="@+id/compound3"
+        class="com.jbloit.reactivelayouttestapp.CompoundView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="150dp"/>
+
+    <view
+        android:id="@+id/compound4"
+        class="com.jbloit.reactivelayouttestapp.CompoundView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="300dp"
+        android:layout_marginTop="150dp"/>
+    <view
+        android:id="@+id/compound5"
+        class="com.jbloit.reactivelayouttestapp.CompoundView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="400dp"
+        android:layout_marginTop="150dp"/>
+    <view
+        android:id="@+id/compound6"
+        class="com.jbloit.reactivelayouttestapp.CompoundView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="500dp"
+        android:layout_marginTop="150dp"/>
+    <view
+        android:id="@+id/compound7"
+        class="com.jbloit.reactivelayouttestapp.CompoundView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="600dp"
+        android:layout_marginTop="150dp"/>
+    <view
+        android:id="@+id/compound8"
+        class="com.jbloit.reactivelayouttestapp.CompoundView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="700dp"
+        android:layout_marginTop="150dp"/>
+
+    <Button
+        android:id="@+id/buttonAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="0dp"
+        android:text="ADD" />
+
+    <Button
+        android:id="@+id/buttonRemove"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="300dp"
+        android:layout_marginTop="0dp"
+        android:text="REMOVE" />
+
+
 
 </FrameLayout>
