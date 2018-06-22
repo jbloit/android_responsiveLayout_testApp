@@ -19,8 +19,6 @@ import java.lang.Math.floor
  * status bar and navigation/system bar) with user interaction.
  */
 
-
-
 class FullscreenActivity : AppCompatActivity(){
 
     val TAG = "FULLSCREEN"
@@ -53,10 +51,6 @@ class FullscreenActivity : AppCompatActivity(){
         compoundViews.add(compound7)
         compoundViews.add(compound8)
 
-        for (i in 0..(compoundViews.size - 1)){
-            compoundViews[i]?.visibility = View.GONE
-        }
-
         buttonAdd.setOnClickListener{
             if (visibleViewsCount<compoundViews.size) {
                 visibleViewsCount += 1
@@ -73,23 +67,31 @@ class FullscreenActivity : AppCompatActivity(){
 
     }
 
-    fun updateViewPositions(){
+    override fun onStart() {
+        super.onStart()
+//        for (i in 0..(compoundViews.size - 1)){
+//            compoundViews[i]?.visibility = View.GONE
+//        }
+    }
 
+
+    fun updateViewPositions(){
 
 
         val layoutArray: ArrayList<Rect>? = getLayout(visibleViewsCount)
 
         for(i in 0..(compoundViews.size - 1)){
-            // update visibility
+
             if (i < visibleViewsCount ) {
 
                 if (layoutArray != null) {
-                    compoundViews[i]?.visibility = View.VISIBLE
                     compoundViews[i].x = layoutArray[i].left.toFloat()
                     compoundViews[i].y = layoutArray[i].top.toFloat()
                     compoundViews[i].layoutParams?.width = layoutArray[i].right - layoutArray[i].left
                     compoundViews[i].layoutParams?.height = layoutArray[i].bottom - layoutArray[i].top
                 }
+                compoundViews[i]?.visibility = View.VISIBLE
+
             }
             else {
                 compoundViews[i]?.visibility = View.GONE
@@ -111,19 +113,23 @@ class FullscreenActivity : AppCompatActivity(){
             returnArray.add(Rect(0,0,50,50))
         }
 
+        // the frame in which to display the monitors
         val frameX = 0
         val frameY = 100
         val frameW = window.decorView.width
         val frameH = window.decorView.height - frameY
+
 
         val evenCount = (N % 2 == 0)
 
         val rectH = if (evenCount) frameH/(N/2) else frameH/((N+1)/2)
         val rectW = aspectRatio * rectH
 
+
+
         if (evenCount){
             for (i in 0..(N-1)){
-                returnArray[i].left = frameX + rectW * (i % 2)
+                returnArray[i].left = frameX + (frameW - rectW/2) * (i % 2)
                 returnArray[i].right = returnArray[i].left + rectW
                 returnArray[i].top = frameY + rectH * floor(i.toDouble() / 2).toInt()
                 returnArray[i].bottom = returnArray[i].top + rectH
@@ -137,7 +143,7 @@ class FullscreenActivity : AppCompatActivity(){
                     returnArray[i].top = frameY
                     returnArray[i].bottom = frameY + rectH
                 } else {
-                    returnArray[i].left = frameX + rectW * ((i-1) % 2)
+                    returnArray[i].left = frameX + (frameW - rectW/2) * ((i-1) % 2)
                     returnArray[i].right = returnArray[i].left + rectW
                     returnArray[i].top = frameY + rectH + rectH * floor((i-1).toDouble() / 2).toInt()
                     returnArray[i].bottom = returnArray[i].top + rectH
@@ -147,34 +153,4 @@ class FullscreenActivity : AppCompatActivity(){
         return returnArray
     }
 
-
-    fun showNviews(N: Int){
-
-        val frameX = 0
-        val frameY = 100
-        val frameW = window.decorView.width
-        val frameH = window.decorView.height - frameY
-
-
-        for(i in 0..(compoundViews.size - 1)){
-
-            if (i < N ) {
-
-                compoundViews[i]?.visibility = View.VISIBLE
-                compoundViews[i]?.layoutParams?.width = frameW / N
-                compoundViews[i]?.layoutParams?.height = frameH / N
-            } else {
-                compoundViews[i]?.visibility = View.GONE
-            }
-        }
-    }
-
-    fun moveImage(progress: Int){
-        val v = findViewById<CompoundView>(R.id.compound1)
-        v?.x = (progress*5).toFloat()
-        v?.y = 500.toFloat()
-//        v?.layoutParams = ViewGroup.LayoutParams(500, 500)
-        v?.layoutParams?.width = 100
-        v?.layoutParams?.height = 100
-    }
 }
